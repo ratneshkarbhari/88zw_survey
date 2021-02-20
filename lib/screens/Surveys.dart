@@ -13,7 +13,7 @@ class _SurveysState extends State<Surveys> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerTemplate(),
-      appBar: AppBarTemplate(),
+      appBar: AppBarTemplate("Surveys"),
       body: SurveysPage(),
     );
   }

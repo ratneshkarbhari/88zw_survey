@@ -13,7 +13,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerTemplate(),
-      appBar: AppBarTemplate(),
+      appBar: AppBarTemplate("Survey Details"),
       body: HomePage(),
     );
   }

@@ -3,27 +3,27 @@ import '../templates/AppBarTemplate.dart';
 import '../templates/DrawerTemplate.dart';
 
 
-class Home extends StatefulWidget {
+class Entries extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _EntriesState createState() => _EntriesState();
 }
 
-class _HomeState extends State<Home> {
+class _EntriesState extends State<Entries> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerTemplate(),
-      appBar: AppBarTemplate(),
-      body: HomePage(),
+      appBar: AppBarTemplate("Survey Entries"),
+      body: EntriesPage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class EntriesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Home"),     
+      child: Text("Entries"),     
     );
   }
 }

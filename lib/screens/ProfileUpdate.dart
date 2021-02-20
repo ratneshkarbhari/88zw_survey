@@ -13,7 +13,7 @@ class _ProfileUpdateState extends State<ProfileUpdate> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerTemplate(),
-      appBar: AppBarTemplate(),
+      appBar: AppBarTemplate("Update Profile"),
       body: ProfileUpdatePage(),
     );
   }
