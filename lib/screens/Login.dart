@@ -64,18 +64,21 @@ class _LoginPageState extends State<LoginPage> {
         "password" : enteredPassword,
         "role" : "survey"
       };
+      print(params);
       var loginResponse = await http.post(apiUrl, body: params);
       var resObj = jsonDecode(loginResponse.body);
-      if(resObj["result"]=="public-failure"){
+      if(resObj["result"]=="public_failure"){
         setState(() {
           loginError = resObj["reason"];
         });
       }else{
         var prefs = Constants.prefs;
+        var empData = jsonDecode(resObj["employee_data"]);
         prefs.setBool("loggedIn", true);
-        prefs.setString("first_name", resObj["first_name"]);
-        prefs.setString("last_name", resObj["last_name"]);
-        prefs.setString("mobile_number", resObj["mobile_number"]);
+        prefs.setString("user_id", empData["id"]);
+        prefs.setString("first_name", empData["first_name"]);
+        prefs.setString("last_name", empData["last_name"]);
+        prefs.setString("mobile_number", empData["mobile_number"]);
         Navigator.push(context,MaterialPageRoute(builder: (context) => Dashboard()));
       }
     }

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import '../screens/ProfileUpdate.dart';
 import '../screens/Dashboard.dart';
 import '../screens/Surveys.dart';
-
+import '../utils/Constants.dart';
 
 class DrawerTemplate extends StatelessWidget {
+
+  final prefs = Constants.prefs;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class DrawerTemplate extends StatelessWidget {
         children: [
           UserAccountsDrawerHeader(
             accountName: Text("Ratnesh Karbhari"),
-            accountEmail: Text("ratneshkarbhari23@gmail.com"),
+            accountEmail: Text("9137976398"),
           ),
           ListTile(
             onTap: (){
