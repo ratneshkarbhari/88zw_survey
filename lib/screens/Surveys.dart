@@ -5,6 +5,7 @@ import '../templates/AppBarTemplate.dart';
 import '../templates/DrawerTemplate.dart';
 import '../utils/Constants.dart';
 import 'package:http/http.dart' as http;
+import '../screens/SurveyDetails.dart';
 
 
 class Surveys extends StatefulWidget {
@@ -57,7 +58,6 @@ class _SurveysPageState extends State<SurveysPage> {
     else {
       print(response.reasonPhrase);
     }
-
   }
 
   @override
@@ -77,6 +77,9 @@ class _SurveysPageState extends State<SurveysPage> {
         ListView.builder(itemCount: allSurveys.length,
           itemBuilder: (context,index){
             return ListTile(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (context)=> SurveyDetails(allSurveys[index])));
+              },
               trailing: Icon(Icons.add,color: Colors.white,),
               tileColor: Colors.purple,
               title: Text(allSurveys[index]["title"],style: TextStyle(fontSize: 20.0,color: Colors.white)),

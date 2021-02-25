@@ -16,10 +16,6 @@ class AppBarTemplate extends StatelessWidget with PreferredSizeWidget {
       title: Text(this.title),
       actions: [
         IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.notifications),
-        ),
-        IconButton(
           onPressed: () {
             prefs.clear();
             Navigator.push(context,MaterialPageRoute(builder: (context)=> Login()));
