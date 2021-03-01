@@ -64,7 +64,6 @@ class _LoginPageState extends State<LoginPage> {
         "password" : enteredPassword,
         "role" : "survey"
       };
-      print(params);
       var loginResponse = await http.post(apiUrl, body: params);
       var resObj = jsonDecode(loginResponse.body);
       if(resObj["result"]=="public_failure"){

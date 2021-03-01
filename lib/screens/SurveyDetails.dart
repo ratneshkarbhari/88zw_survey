@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import '../templates/AppBarTemplate.dart';
 import '../templates/DrawerTemplate.dart';
+import './Entries.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 
@@ -64,7 +65,7 @@ class _SurveyDetailsPageState extends State<SurveyDetailsPage> {
             SizedBox(height: 10.0,),
             SizedBox(
               height: 100,
-              width: 100,  
+              width: 200,  
               child: GoogleMap(
                 mapType: MapType.hybrid,
                 initialCameraPosition: _kGooglePlex,
@@ -73,6 +74,20 @@ class _SurveyDetailsPageState extends State<SurveyDetailsPage> {
                 },
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              height: 50.0,
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Entries(this.widget.surveyData["id"])));
+              },
+              color: Colors.purple,
+              child: Text("Entries",
+                  style: TextStyle(color: Colors.white, fontSize: 16.0)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0)),
+            )
           ],
         ),     
       ),

@@ -13,7 +13,7 @@ class _AddEntriesState extends State<AddEntries> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerTemplate(),
-      appBar: AppBarTemplate("Add Entries"),
+      appBar: AppBarTemplate("Add Entry"),
       body: AddEntriesPage(),
     );
   }
